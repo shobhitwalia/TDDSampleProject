@@ -72,5 +72,33 @@ namespace TestDrivenDevelopementExample.Test
             Assert.AreEqual(3, result);
         }
 
+        [TestMethod]
+        public void GetFibonacciNumber_Given8_Return21L()
+        {
+            //arrange
+            int number = 8;
+
+            //act
+            int result = Fibonacci.GetFibonacciNumber(number);
+
+            //assert
+            Assert.AreEqual(21, result);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void GetFibonacciNumber_GivenNegative_Return_Exception()
+        {
+            //arrange
+            int number = -1;
+
+            //act
+            int result = Fibonacci.GetFibonacciNumber(number);
+
+            //assert
+            Assert.AreEqual(0, result);
+        }
+
+
     }
 }

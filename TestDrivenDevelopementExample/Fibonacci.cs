@@ -32,10 +32,13 @@ namespace TestDrivenDevelopementExample
 
             if (number == 0)
                 return 0;
+            if (number < 0)
+                throw new IndexOutOfRangeException();
             else if (number <= 2)
                 return 1;
             else
-                return GetFibonacciNumber(number-1) + GetFibonacciNumber(number -2);
+                return GetFibonacciNumber(number - 1) + GetFibonacciNumber(number - 2);
+
         }
     }
 }
